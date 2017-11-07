@@ -12,6 +12,13 @@
     <address>Written by maria.hansson@kundo.se</address>
     <p>Welcome to this small site with these quizzes feel free to take on them all as you please. Just click the
         links below.</p>
+
+    <ul>
+        {% for quiz in quizzes %}
+        <li>{{ quiz.name }}</li>
+        {% endfor %}
+    </ul>
+
     <ul>
         <li><a href="quiz.html">Let me guess your favourite color</a></li>
         <li><a href="quiz.html">Are you in a good mood?</a></li>
