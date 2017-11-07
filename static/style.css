@@ -1,0 +1,30 @@
+body {
+    background-color: #666;
+    font-family: sans-serif;
+    color: #222;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+a {
+    color: #111;
+    cursor: pointer;
+}
+
+.hidden, .hidden *{
+    display: none;
+}
+
+ul {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+#dev-toggle {
+    float:right;
+}
+
