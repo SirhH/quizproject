@@ -8,6 +8,11 @@
 <body>
 <button id="dev-toggle">Toggle Dev</button>
     <h1>Question wasn't found</h1>
+    <p>{{ question_number }}. {{ question }}</p>
+    <p>{{ answer1 }}</p>
+    <p>{{ answer2 }}</p>
+    <p>{{ answer3 }}</p>
+
     <form class="hidden">
         <input type="radio">
         <label></label>
@@ -23,9 +28,9 @@
 
 <script>
         document.getElementById("dev-toggle").addEventListener("click", function () {
-            var all_hinnden = document.getElementsByClassName("hidden");
-            for (var i = 0; i < all_hinnden.length; i++){
-                all_hinnden[i].className = "";
+            var all_hidden = document.getElementsByClassName("hidden");
+            for (var i = 0; i < all_hidden.length; i++){
+                all_hidden[i].className = "";
             }
         })
     </script>
