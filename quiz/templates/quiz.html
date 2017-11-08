@@ -8,9 +8,9 @@
 <body>
     <button id="dev-toggle">Toggle Dev</button>
     <h1>Quizz wasn't found</h1>
-    <a href="question.html" class="hidden">Start quiz</a>
+    <a href="question.htm" class="hidden">Start quiz</a>
 
-    <p>{{ quiz.name }}</p>
+    <p><a href="{% url 'question_page' quiz_number 1 %}">{{ quiz.name }}</a></p>
     <p>{{ quiz.description }}</p>
 
     <script>
