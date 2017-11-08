@@ -10,6 +10,9 @@
     <h1>Quizz wasn't found</h1>
     <a href="question.html" class="hidden">Start quiz</a>
 
+    <p>{{ quiz.name }}</p>
+    <p>{{ quiz.description }}</p>
+
     <script>
         document.getElementById("dev-toggle").addEventListener("click", function () {
             var all_hinnden = document.getElementsByClassName("hidden");
