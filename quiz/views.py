@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from quiz.models import Quiz
 from django.shortcuts import redirect
+from django.http import Http404
 
 # Create your views here.
 quizzes = [
@@ -35,15 +36,27 @@ def startpage(request):
 
 
 def quiz(request, quiz_number):
+    try:
+        l_quiz = Quiz.objects.get(quiz_number=quiz_number)
+    except Quiz.DoesNotExist:
+        raise Http404
+    if quiz_number > l_quiz.quiz_number:
+        raise Http404
+
     context = {
-        'quiz': Quiz.objects.get(quiz_number=quiz_number),
+        'quiz': l_quiz,
         'quiz_number': quiz_number,
     }
     return render(request, 'quiz.html', context)
 
 
 def question(request, quiz_number, question_number):
-    l_quiz = Quiz.objects.get(quiz_number=quiz_number)
+    try:
+        l_quiz = Quiz.objects.get(quiz_number=quiz_number)
+    except Quiz.DoesNotExist:
+        raise Http404
+    if question_number > l_quiz.questions.count():
+        raise Http404
     l_questions = l_quiz.questions.all()
     l_question = l_questions[question_number - 1]
 

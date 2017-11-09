@@ -15,6 +15,8 @@
     <ul>
         {% for quiz in quizzes %}
             <li><a href="{% url 'quiz_page' quiz.quiz_number %}" class="cube">{{ quiz.name }}</a></li>
+            {% empty %}
+            <li>We didn't find the quizzes, check in another time and we might have found them.</li>
         {% endfor %}
     </ul>
 
