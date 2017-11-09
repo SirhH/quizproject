@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8"/>
     <link rel="stylesheet" type="text/css" href="/static/style.css">
-    <title>My quizz</title>
+    <title>My quiz</title>
 </head>
 <body>
 <button id="dev-toggle">Toggle Dev</button>
@@ -15,7 +15,7 @@
 
     <p><a href="{% url 'result_page' quiz_number %}">Nästa</a></p>
 
-    <form class="hidden" action="{% url "answer_page" quiz.quiz_number question_number %}" method="post">
+    <form action="{% url 'answer_page' quiz.quiz_number question_number %}" method="post">
         {% csrf_token %}
         <input id="answer1" type="radio" name="answer" value="1">
         <label for="answer1">{{ answer1 }}</label>

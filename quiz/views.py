@@ -71,6 +71,6 @@ def answer(request, quiz_number, question_number):
     l_answer = request.POST['answer']
     saved_answers = request.session.get(str(quiz_number), {})
     saved_answers[question_number] = int(l_answer)
-    request.session[question_number] = saved_answers
-    return redirect('question_page', quiz_number, question_number + 1 )
+    request.session[quiz_number] = saved_answers
+    return redirect('question_page', quiz_number, question_number + 1)
 
