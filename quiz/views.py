@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from quiz.models import Quiz
+from django.shortcuts import redirect
 
 # Create your views here.
 quizzes = [
@@ -64,3 +65,12 @@ def completed(request, quiz_number):
         "quiz_number": quiz_number,
     }
     return render(request, 'results.html', context)
+
+
+def answer(request, quiz_number, question_number):
+    l_answer = request.POST['answer']
+    saved_answers = request.session.get(str(quiz_number), {})
+    saved_answers[question_number] = int(l_answer)
+    request.session[question_number] = saved_answers
+    return redirect('question_page', quiz_number, question_number + 1 )
+

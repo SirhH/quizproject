@@ -15,15 +15,16 @@
 
     <p><a href="{% url 'result_page' quiz_number %}">Nästa</a></p>
 
-    <form class="hidden">
-        <input type="radio">
-        <label></label>
+    <form class="hidden" action="{% url "answer_page" quiz.quiz_number question_number %}" method="post">
+        {% csrf_token %}
+        <input id="answer1" type="radio" name="answer" value="1">
+        <label for="answer1">{{ answer1 }}</label>
 
-        <input type="radio">
-        <label></label>
+        <input id="answer2" type="radio" name="answer" value="2">
+        <label for="answer2">{{ answer2 }}</label>
 
-        <input type="radio">
-        <label></label>
+        <input id="answer3" type="radio" name="answer" value="3">
+        <label for="answer3">{{ answer3 }}</label>
 
         <input type="submit" value="Next"/>
     </form>
