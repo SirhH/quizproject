@@ -1,5 +1,5 @@
 body {
-    background-color: #666;
+    background-color: #888; /* #666 to ish #888*/
     font-family: sans-serif;
     color: #222;
     max-width: 700px;
@@ -24,7 +24,24 @@ ul {
     margin: 0 auto;
 }
 
+li {
+    list-style: none;
+    margin-top: 10px;
+}
+
 #dev-toggle {
     float:right;
+}
+
+.cube {
+    display: block;
+    background-color: #3a3a3a;
+    border: 1px solid #b5b5b5;
+    border-radius: 4px;
+    padding: 1em .5em;
+    color: #d8d8d8;
+    text-align: center;
+    text-decoration: none;
+
 }
 

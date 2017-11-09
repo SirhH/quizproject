@@ -4,18 +4,23 @@ from django.shortcuts import render
 quizzes = [
     {
         'quiz_number': 1,
-        'name': 'Klassiska böcker',
-        'description': 'Hur bra kan du dina klassiker?'
+        'name': 'Let me guess your favourite color',
+        'description': 'Jag tror att jag vet vilken färg du gillar'
     },
     {
         'quiz_number': 2,
-        'name': 'Största fotbillslagen',
-        'description': 'Kan du fina lag?'
+        'name': 'Are you in a good mood?',
+        'description': 'See if you are having a good day'
     },
     {
         'quiz_number': 3,
-        'name': 'Världens mest kända hackare',
-        'description': 'Kan du din hackerhistoria?'
+        'name': 'Guess my card',
+        'description': 'I am thinking of a card, can you find out?'
+    },
+    {
+        'quiz_number': 4,
+        'name': 'Let me guess your card',
+        'description': 'Can I guess what card you are thinking of?'
     },
 ]
 

@@ -10,22 +10,13 @@
     <button id="dev-toggle">Toggle Dev</button>
     <h1>Quizz</h1>
     <address>Written by maria.hansson@kundo.se</address>
-    <p>Welcome to this small site with these quizzes feel free to take on them all as you please. Just click the
-        links below.</p>
+    <p>Welcome to this small site with these quizzes feel free to take on them all as you please.</p>
 
     <ul>
         {% for quiz in quizzes %}
-            <li><a href="{% url 'quiz_page' quiz.quiz_number %}">{{ quiz.name }}</a></li>
+            <li><a href="{% url 'quiz_page' quiz.quiz_number %}" class="cube">{{ quiz.name }}</a></li>
         {% endfor %}
     </ul>
-
-    <ul>
-        <li><a href="quiz.html">Let me guess your favourite color</a></li>
-        <li><a href="quiz.html">Are you in a good mood?</a></li>
-        <li><a href="quiz.html">Guess my card</a></li>
-        <li><a href="quiz.html">Let me guess your card</a></li>
-    </ul>
-
 
     <script>
         document.getElementById("dev-toggle").addEventListener("click", function () {
