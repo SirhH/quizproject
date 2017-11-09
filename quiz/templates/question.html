@@ -15,9 +15,9 @@
 
     <p><a href="{% url 'result_page' quiz_number %}">Nästa</a></p>
 
-    <form action="{% url 'answer_page' quiz.quiz_number question_number %}" method="post">
+    <form action="{% url 'answer_page' quiz_number question_number %}" method="post">
         {% csrf_token %}
-        <input id="answer1" type="radio" name="answer" value="1">
+        <input id="answer1" type="radio" name="answer" value="1" checked>
         <label for="answer1">{{ answer1 }}</label>
 
         <input id="answer2" type="radio" name="answer" value="2">

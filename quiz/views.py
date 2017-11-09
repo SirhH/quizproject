@@ -48,12 +48,12 @@ def question(request, quiz_number, question_number):
     l_question = l_questions[question_number - 1]
 
     context = {
-        "question_number": question_number,
-        "question": l_question.question,
-        "answer1": l_question.answer1,
-        "answer2": l_question.answer2,
-        "answer3": l_question.answer3,
-        "quiz_number": quiz_number,
+        'question_number': question_number,
+        'question': l_question.question,
+        'answer1': l_question.answer1,
+        'answer2': l_question.answer2,
+        'answer3': l_question.answer3,
+        'quiz_number': quiz_number,
     }
     return render(request, 'question.html', context)
 
