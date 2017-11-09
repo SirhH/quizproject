@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from quiz.models import Quiz
 
 # Create your views here.
 quizzes = [
@@ -27,26 +28,30 @@ quizzes = [
 
 def startpage(request):
     context = {
-        'quizzes': quizzes,
+        'quizzes': Quiz.objects.all(),
     }
     return render(request, 'start.html', context)
 
 
 def quiz(request, quiz_number):
     context = {
-        'quiz': quizzes[quiz_number - 1],
+        'quiz': Quiz.objects.get(quiz_number=quiz_number),
         'quiz_number': quiz_number,
     }
     return render(request, 'quiz.html', context)
 
 
 def question(request, quiz_number, question_number):
+    l_quiz = Quiz.objects.get(quiz_number=quiz_number)
+    l_questions = l_quiz.questions.all()
+    l_question = l_questions[question_number - 1]
+
     context = {
         "question_number": question_number,
-        "question": "Hur många bultar har ölandsbron?",
-        "answer1": "12",
-        "answer2": "66400",
-        "answer3": "7 428 954",
+        "question": l_question.question,
+        "answer1": l_question.answer1,
+        "answer2": l_question.answer2,
+        "answer3": l_question.answer3,
         "quiz_number": quiz_number,
     }
     return render(request, 'question.html', context)
