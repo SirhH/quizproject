@@ -6,20 +6,12 @@
     <title>My quizz</title>
 </head>
 <body>
-    <button id="dev-toggle">Toggle Dev</button>
-    <h1>Quizz wasn't found</h1>
-    <a href="question.htm" class="hidden">Start quiz</a>
+    <div class="wrapper">
+        <h1>{{ quiz.name }}</h1>
+        <p>{{ quiz.description }}</p>
 
-    <p><a href="{% url 'question_page' quiz_number 1 %}">{{ quiz.name }}</a></p>
-    <p>{{ quiz.description }}</p>
+        <a class="center" href="{% url 'question_page' quiz_number 1 %}"><button>Start quiz</button></a>
+    </div>
 
-    <script>
-        document.getElementById("dev-toggle").addEventListener("click", function () {
-            var all_hinnden = document.getElementsByClassName("hidden");
-            for (var i = 0; i < all_hinnden.length; i++){
-                all_hinnden[i].className = "";
-            }
-        })
-    </script>
 </body>
 </html>

@@ -1,9 +1,13 @@
+/*
 body {
-    background-color: #888; /* #666 to ish #888*/
-    font-family: sans-serif;
+ */
+    /*background-color: #888; /* #666 to ish #888*/
+    /*font-family: sans-serif;
+    font-size: 12px;
     color: #222;
     max-width: 700px;
     margin: 0 auto;
+    min-width:300px;
 }
 
 h1 {
@@ -13,6 +17,7 @@ h1 {
 a {
     color: #111;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .hidden, .hidden *{
@@ -20,22 +25,33 @@ a {
 }
 
 ul {
-    max-width: 300px;
+    max-width: 600px;
     margin: 0 auto;
+    padding: 0;
 }
 
 li {
     list-style: none;
-    margin-top: 10px;
+    border: 1px solid #ccc;
+    padding: 2px
 }
 
+.wrapper {
+    display: block;
+    padding: 1em;
+    background-color: #ddd;
+}
+.inline-wrapper {
+    display: inline-block;
+    padding: 1em;
+}
 #dev-toggle {
     float:right;
 }
 
 .cube {
     display: block;
-    background-color: #3a3a3a;
+    background-color: #222;
     border: 1px solid #b5b5b5;
     border-radius: 4px;
     padding: 1em .5em;
@@ -45,3 +61,95 @@ li {
 
 }
 
+.center {
+    margin: 0 auto;
+    text-align: center;
+    display: block;
+}
+
+.button, button {
+    padding: .5em 2em;
+    background-color: #222;
+    color: #d8d8d8;
+    font-size: 1.2em;
+    cursor: pointer;
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+.quiz-list {
+    background-color: #eee;
+}
+
+.quiz-core a {
+}
+
+h2 {
+    font-size: 1.2em;
+}
+.quiz-list h2 {
+    display:inline-block;
+    vertical-align: top;
+}
+
+.quiz-list p {
+    font-size: .9em;
+}
+
+.img-placeholder {
+    width: 100px;
+    height:100px;
+    background-color: #fff;
+}
+
+.big-text {
+    font-size: 1.3em;
+    text-decoration: none;
+}
+
+.quiz-img {
+    display: inline;
+    max-width: 30%;
+    overflow: hidden;
+    vertical-align: middle;
+    max-height: 100px;
+}
+.quiz-core {
+    float: right;
+    width: 70%;
+}
+
+.right-floater {
+    float: right;
+} */
+
+/* mobile */
+body {
+    background-color: #ddd; /* #666 to ish #888 */
+    font-family: sans-serif;
+    font-size: 12px;
+    color: #222;
+}
+
+
+ul {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+li {
+    list-style: none;
+    padding: 2px;
+    background-color: #fff;
+}
+
+a {
+    text-decoration: none;
+    color: #111;
+    cursor: pointer;
+}

@@ -6,36 +6,30 @@
     <title>My quiz</title>
 </head>
 <body>
-<button id="dev-toggle">Toggle Dev</button>
-    <h1>Question wasn't found</h1>
-    <p>{{ question_number }}. {{ question }}</p>
-    <p>{{ answer1 }}</p>
-    <p>{{ answer2 }}</p>
-    <p>{{ answer3 }}</p>
 
-    <p><a href="{% url 'result_page' quiz_number %}">Nästa</a></p>
+    <h1>{{ question }}</h1>
 
     <form action="{% url 'answer_page' quiz_number question_number %}" method="post">
         {% csrf_token %}
-        <input id="answer1" type="radio" name="answer" value="1" checked>
-        <label for="answer1">{{ answer1 }}</label>
+        <div class="wrapper">
+            <input id="answer1" type="radio" name="answer" value="1" checked>
+            <label for="answer1">{{ answer1 }}</label>
+        </div>
 
-        <input id="answer2" type="radio" name="answer" value="2">
-        <label for="answer2">{{ answer2 }}</label>
+        <div class="wrapper">
+            <input id="answer2" type="radio" name="answer" value="2">
+            <label for="answer2">{{ answer2 }}</label>
+        </div>
 
-        <input id="answer3" type="radio" name="answer" value="3">
-        <label for="answer3">{{ answer3 }}</label>
+        <div class="wrapper">
+            <input id="answer3" type="radio" name="answer" value="3">
+            <label for="answer3">{{ answer3 }}</label>
+        </div>
 
-        <input type="submit" value="Next"/>
+        <input class="button center" type="submit" value="Next"/>
+            <p class="center">{{ question_number }}/ {{ last_question_number }}</p>
+
     </form>
 
-<script>
-        document.getElementById("dev-toggle").addEventListener("click", function () {
-            var all_hidden = document.getElementsByClassName("hidden");
-            for (var i = 0; i < all_hidden.length; i++){
-                all_hidden[i].className = "";
-            }
-        })
-    </script>
 </body>
 </html>
