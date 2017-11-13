@@ -6,12 +6,18 @@
     <title>My quizz</title>
 </head>
 <body>
-    <div class="wrapper">
-        <h1>{{ quiz.name }}</h1>
+<header>
+    <a href="{% url 'start_page' %}"><h1>Quizz</h1></a>
+
+    <address>Written by maria.hansson@kundo.se</address>
+
+</header>
+<main>
+        <h2>{{ quiz.name }}</h2>
         <p>{{ quiz.description }}</p>
-
-        <a class="center" href="{% url 'question_page' quiz_number 1 %}"><button>Start quiz</button></a>
-    </div>
-
+        <div class="center">
+            <a class="button" href="{% url 'question_page' quiz_number 1 %}">Start quiz</a>
+        </div>
+</main>
 </body>
 </html>

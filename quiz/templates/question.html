@@ -6,9 +6,16 @@
     <title>My quiz</title>
 </head>
 <body>
+<header>
+    <a href="{% url 'start_page' %}"><h1>Quizz</h1></a>
 
-    <h1>{{ question }}</h1>
+    <address>Written by maria.hansson@kundo.se</address>
 
+</header>
+
+<main>
+
+    <h2>{{ question }}</h2>
     <form action="{% url 'answer_page' quiz_number question_number %}" method="post">
         {% csrf_token %}
         <div class="wrapper">
@@ -25,11 +32,16 @@
             <input id="answer3" type="radio" name="answer" value="3">
             <label for="answer3">{{ answer3 }}</label>
         </div>
+        <div class="center">
 
-        <input class="button center" type="submit" value="Next"/>
-            <p class="center">{{ question_number }}/ {{ last_question_number }}</p>
+            <input class="button" type="submit" value="Next"/>
+            <p>{{ question_number }}/ {{ last_question_number }}</p>
 
+        </div>
     </form>
-
+</main>
+<aside>
+    <span>{{ quiz_name }}</span>
+</aside>
 </body>
 </html>

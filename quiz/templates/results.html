@@ -6,10 +6,17 @@
     <title>My quizz</title>
 </head>
 <body>
-    <div class="wrapper">
-        <h1>Your result</h1>
-        <p>{{ correct }} rätt  av {{ total }}</p>
+<header>
+    <a href="{% url 'start_page' %}"><h1>Quizz</h1></a>
+    <address>Written by maria.hansson@kundo.se</address>
 
+</header>
+        <main>
+
+        <h2>Your result</h2>
+
+        <p>{{ correct }} rätt  av {{ total }}</p>
+        <p>
         {% if correct > 5 %}
             Du fick mer än 5 rätt!
         {% elif correct > 3 %}
@@ -17,9 +24,13 @@
         {% else %}
         Du fick mindre än 3 rätt
         {% endif %}
-
-        <a class="center" href="{% url 'start_page' %}"><button>Till startsidan</button></a>
-    </div>
-
+        </p>
+        <div class="center">
+            <a class="button" href="{% url 'start_page' %}">Quizzes</a>
+        </div>
+</main>
+<aside>
+    <span>{{ quiz_name }}</span>
+</aside>
 </body>
 </html>

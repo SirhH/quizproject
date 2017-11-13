@@ -7,32 +7,36 @@
 
 </head>
 <body>
-<!---<div class="wrapper">--->
-    <h1>Quizz</h1>
+<header>
+    <a href="{% url 'start_page' %}"><h1>Quizz</h1></a>
+
     <address>Written by maria.hansson@kundo.se</address>
+
+</header>
+<main>
     <p>Welcome to this small site with these quizzes feel free to take on them all as you please.</p>
 
     <ul class="quiz-list">
         {% for quiz in quizzes %}
             <li>
 
-                <!---<div class="quiz-img"> --->
-                    <a href="{% url 'quiz_page' quiz.quiz_number %}" >
-                        <img class="img-placeholder" src="/static/placeholder.jpg"/>
-                    </a>
-                <!---</div> --->
+                <a href="{% url 'quiz_page' quiz.quiz_number %}" >
+                    <img class="img-placeholder" src="/static/placeholder.jpg" alt="placeholder image"/>
+                </a>
 
-                <!---<div class="quiz-core">--->
-                    <a href="{% url 'quiz_page' quiz.quiz_number %}" ><h2>{{ quiz.name }}</h2></a>
+                <div class="quiz-core">
+                    <a href="{% url 'quiz_page' quiz.quiz_number %}" >
+                    <h2>{{ quiz.name }}</h2>
                     <p>{{ quiz.description }}</p>
-                    <a href="{% url 'question_page' quiz.quiz_number 1 %}">Start quiz</a>
-                <!---</div>--->
+                    </a>
+                    <a class="button" href="{% url 'question_page' quiz.quiz_number 1 %}">Start quiz</a>
+                </div>
 
             </li>
         {% empty %}
             <li>We didn't find the quizzes, check in another time and we might have found them.</li>
         {% endfor %}
     </ul>
-<!---</div>--->
+</main>
 </body>
 </html>

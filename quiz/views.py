@@ -39,6 +39,7 @@ def question(request, quiz_number, question_number):
     l_question = l_questions[question_number - 1]
     last_question_number = l_questions.count()
     context = {
+        'quiz_name': l_quiz.name,
         'question_number': question_number,
         'question': l_question.question,
         'answer1': l_question.answer1,
@@ -65,6 +66,7 @@ def completed(request, quiz_number):
         "correct": num_correct_answers,
         "total": num_questions,
         "quiz_number": quiz_number,
+        'quiz_name': l_quiz.name,
     }
     return render(request, 'results.html', context)
 
