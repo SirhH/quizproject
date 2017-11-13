@@ -23,3 +23,20 @@ class Question(models.Model):
     def __str__(self):
         return self.question
 
+
+class Question2(models.Model):
+    question = models.TextField(max_length=100)
+    quiz = models.ForeignKey(Quiz, related_name='questions', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.question
+
+
+class Answer(models.Model):
+    answer = models.CharField(max_length=100)
+    value = models.PositiveIntegerField()
+    question = models.ForeignKey(Question2, related_name='answers', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.answer
+
