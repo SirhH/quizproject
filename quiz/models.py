@@ -26,7 +26,7 @@ class Question(models.Model):
 
 class Question2(models.Model):
     question = models.TextField(max_length=100)
-    quiz = models.ForeignKey(Quiz, related_name='questions', on_delete=models.CASCADE)
+    quiz = models.ForeignKey(Quiz, related_name='questions2', on_delete=models.CASCADE)
 
     def __str__(self):
         return self.question
