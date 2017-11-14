@@ -65,7 +65,7 @@ li {
     border-radius: 3px;
     position: relative;
     border: 1px solid #ddd;
-
+    margin: 1em 0;
 }
 
 a {
@@ -113,4 +113,8 @@ img {
 
 .center {
     text-align: center;
+}
+
+.transparent {
+    background-color: transparent;
 }
